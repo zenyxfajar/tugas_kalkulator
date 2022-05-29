@@ -577,4 +577,8 @@ int main(){
 			goto START;
 			break;
 	}
+	cout<<endl;
+	
+	cout << "End of program, press any key to close window..." <<endl;
+	getch();
 }
