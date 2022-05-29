@@ -128,6 +128,8 @@ double modulo(){
 //Exponential calculation
 double exp_number(){
 	
+	cout << "Input base and exponent number!" <<endl;
+	
 	BEGIN:
 	double base_number{input_number()};
 	
@@ -153,7 +155,7 @@ double exp_number(){
 		
 		cout << "The exponent is: " << exponent_number << endl;
 		
-		cout << "Please input the new second number" <<endl;
+		cout << "Please input the new base number" <<endl;
 		
 		cout << endl;
 		
@@ -166,6 +168,8 @@ double exp_number(){
 }
 
 double square_root(){
+	
+	cout << "Input base number!" <<endl;
 	
 	BEGIN:
 	double base_number{input_number()};
@@ -186,7 +190,7 @@ double square_root(){
 		
 		cout << endl << "The base is: " << base << endl;
 		
-		cout << "Please input the a number" <<endl;
+		cout << "Please input a number" <<endl;
 		
 		cout << endl;
 		
