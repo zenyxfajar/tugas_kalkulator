@@ -128,6 +128,8 @@ double modulo(){
 //Exponential calculation
 double exp_number(){
 	
+	cout << "Input base and exponent number!" <<endl;
+	
 	BEGIN:
 	double base_number{input_number()};
 	
@@ -166,6 +168,8 @@ double exp_number(){
 }
 
 double square_root(){
+	
+	cout << "Input base number!" <<endl;
 	
 	BEGIN:
 	double base_number{input_number()};
