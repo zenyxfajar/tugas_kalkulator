@@ -3,6 +3,7 @@
 #include <string>
 #include <cmath>
 #include <stdexcept>
+#include <iomanip>
 
 using namespace std;
 
@@ -57,14 +58,25 @@ double multiplication(){
 }
 
 double division(){
-	DIV:
 //INPUT NUMBER TO BE CALCULATED	
 	double first_number{input_number()};
+	DIV:
 	double second_number{input_number()};
 	double calculation_result;
 	
-	if (second_number == 0){
-		throw runtime_error("Math error: Attempted to divide by Zero\n");
+	try {
+		if (second_number == 0){
+//		throw runtime_error("Math error: Attempted to divide by Zero\n");
+		cout << endl << "Math error: Attempted to divide by Zero" <<endl;
+			
+		throw(second_number);
+		
+		}
+	}
+	catch(double denominator){
+		cout << endl << "The denominator is: " << denominator << endl;
+		cout << "Please input the new second number" <<endl;
+		goto DIV;
 	}
 	
 // DO MATH OPERATION
@@ -95,22 +107,25 @@ double modulo(){
 double Sinus(){
   double number{input_number()};
   double calculation_result;
+  
   calculation_result = sin(number);
 
-  cout << "sin " << number << " = " << calculation_result << endl;
+  cout << "sine " << number << " = " << calculation_result << endl;
 }
 
 double Cosinus(){
   double number{input_number()};
   double calculation_result;
+  
   calculation_result = cos(number);
 
-  cout << "cos " << number << " = " << calculation_result << endl;
+  cout << "cosine " << number << " = " << calculation_result << endl;
 }
 
 double Tangen(){
   double number{input_number()};
   double calculation_result;
+  
   calculation_result = tan(number);
 
   cout << "tan " << number << " = " << calculation_result << endl;
@@ -119,6 +134,7 @@ double Tangen(){
 double InversSinus(){
   double number{input_number()};
   double calculation_result;
+  
   calculation_result = asin(number);
 
   if (number < -1 && number > 1){
@@ -157,25 +173,33 @@ int main(){
 	int option;
 	
 	cout << "PILIH OPERATOR ARITMATIKA"<<endl;
-	cout << "1. Penjumlahan" << endl;
-	cout << "2. Pengurangan" << endl;
-	cout << "3. Perkalian" << endl;
-	cout << "4. Pembagian" << endl;
-	cout << "5. Modulus" << endl;
-	cout << "6.  Sin" << endl;
-	cout << "7.  Cos" << endl;
-	cout << "8.  Tan" << endl;
-	cout << "9.  Arcsin" << endl;
-	cout << "10. Arccos" << endl;
-	cout << "11. Arctan" << endl;
+	cout << "========================================================="<<endl;
 	cout << endl;
-	
+	cout << setw(10) << "1. Penjumlahan" 
+		<< setw(10) << "6. Sin" 
+		<< setw(20) << "11. ArcTan" << endl;
+	cout << setw(10) << "2. Pengurangan" 
+		<< setw(10) << "7. Cos" << endl;
+	cout << setw(10) << "3. Perkalian" 
+		<< setw(12) << "8. Tan" << endl;
+	cout << setw(10) << "4. Pembagian" 
+		<< setw(15) << "9. ArcSin" << endl;
+	cout << setw(10) << "5. Modulus" 
+		<< setw(17) << "10. ArcCos" << endl;	
+
+	cout << endl;
+
 	START:
 	cout << "Select operation: ";
 	cin >> option;
 	
-	if(option==)
-
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout<<endl;
+		cout<<"Selector only accept integer number (1-9)"<<endl;
+		goto START; 	
+	}
 	
 	switch(option){
 	        case 1 : 
