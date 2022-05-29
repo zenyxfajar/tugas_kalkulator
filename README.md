@@ -2,4 +2,8 @@
 
 Scientific Calculator Program made for Pemrograman Dasar Lecture Assignement
 
-Program written in C++
+Program written in C++ containing 15 menu of calculation including basic operation, trigonometry and logarithm.
+
+Compiled program as seen in picture below
+
+![snapshot_program_cli](https://user-images.githubusercontent.com/101339523/170889221-cc8a14ac-d878-4c17-9d46-be5bf3d77b4f.jpg)
