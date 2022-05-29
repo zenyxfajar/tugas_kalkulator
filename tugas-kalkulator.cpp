@@ -57,7 +57,7 @@ double multiplication(){
 }
 
 double division(){
-	
+	DIV:
 //INPUT NUMBER TO BE CALCULATED	
 	double first_number{input_number()};
 	double second_number{input_number()};
@@ -91,96 +91,71 @@ double modulo(){
 
 }
 int main(){
+	char continue_key;
 	int option;
 	
-//	division();
+	cout << "PILIH OPERATOR ARITMATIKA"<<endl;
+	cout << "1. Penjumlahan" << endl;
+	cout << "2. Pengurangan" << endl;
+	cout << "3. Perkalian" << endl;
+	cout << "4. Pembagian" << endl;
+	cout << "5. Modulus" << endl;
+	cout << endl;
 	
-	modulo();
+	START:
+	cout << "Select operation: ";
+	cin >> option;
 	
-//	sum();
-//	double calculation_result;
-//	cout << "Input the first number: ";
-//	cin >> first_number;
-//	cout << endl;
-//	cout << "Input the second number: ";
-//	cin >> second_number;
-//	cout << endl;
-//	sum(first_number, second_number, calculation_result);
-//	subtraction(first_number, second_number, calculation_result);
-//	times(first_number, second_number, calculation_result);
-//	divide(first_number, second_number, calculation_result);
-//	int bil1,bil2, pil;
-//	float hasil;
-//	string operasi;
-//	
-//	cout << "PILIH OPERATOR ARITMATIKA"<<endl;
-//	cout << "1. Penjumlahan" << endl;
-//	cout << "2. Pengurangan" << endl;
-//	cout << "3. Perkalian" << endl;
-//	cout << "4. Pembagian" << endl;
-//	cout << "5. Modulus" << endl;
-//	cout << endl;
-//	
-//	START:
-//	cout << "Select operation: ";
-//	cin >> option;
-//	cout << endl;
-//	cout<<"Masukan Bilangan pertama : ";
-//	cin>>bil1;
-//	cout<<"Masukan Bilangan kedua : ";
-//	cin>>bil2;	
-////	
-//	switch(option){
-//	        case 1 : 
-//			
-//			hasil=bil1+bil2;
-//			
-//			operasi='+';
-//			
-//			break;
-//		case 2 : 
-//		
-//			hasil=bil1-bil2;
-//			
-//			operasi='-';
-//			
-//			break;
-//		case 3 :
-//			hasil=bil1*bil2;
-//			
-//			operasi='*';
-//			
-//			break;
-//		case 4 : 
-//			hasil=bil1/bil2;
-//			
-//			operasi='/';
-//			
-//			break;
-//		case 5 : 
-//			hasil=bil1%bil2;
-//			
-//			operasi='%';
-//			
-//			break;
-//			
-//		default :
-//			
-//			cout<<"Selector only accept number (1-9)"<<endl;
-//			
-//			cout << "Apakah ingin memulai lagi? (Y/N)";
-//			
-//			cin >> opsi_lanjut;
-//			
-//			if(opsi_lanjut == 'Y'){
-//				
-//				system ("CLS");
-//				
-//				goto START;
-//	}
-//	cout<<"-----------------------------"<<endl;
-//	cout<<"    "<<bil1<<operasi<<bil2<<"="<<hasil<<endl;
-//	cout<<"-----------------------------"<<endl;
-//	
-//	getch();
+	if(option==)
+
+	
+	switch(option){
+	        case 1 : 
+			
+			sum();
+
+			break;
+		case 2 : 
+		
+			subtraction();
+			
+			break;
+		case 3 :
+			
+			multiplication();
+			
+			break;
+		case 4 : 
+		
+			division();
+
+			break;
+
+		case 5 : 
+		
+			modulo();
+			break;
+			
+		default:
+			
+			cout << endl;
+			cout<<"Selector only accept number (1-9)"<<endl;
+			
+			cout << "Apakah ingin memulai lagi? (Y/N)";
+			
+			cin >> continue_key;
+			
+			if(continue_key == 'Y'){
+				
+				system ("CLS");
+				
+				goto START;
+			}
+			else{
+				
+				exit(0);
+				
+			}
+			break;
+	}
 }
