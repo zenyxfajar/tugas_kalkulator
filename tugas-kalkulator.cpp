@@ -120,82 +120,68 @@ class Standard{
 		
 };
 
-//Exponential calculation
-double exp_number(){
-	
-	cout << "Input base and exponent number!" <<endl;
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double exponent_number{input_number()};
-	
-	double calculation_result;
-	
-	
-	try {
-		if (base_number == 0){
-			if(exponent_number < 0){
+class Exponential{
+	public:
+		double calculation_result;
+		
+		//Exponential calculation
+		double exp_number(){
 			
-			cout << endl << "Math error: Attempted to divide by Zero" <<endl;
-			
-			throw(base_number, exponent_number);
-		
-			}
-		}
-	}
-	catch(double base){
-		
-		cout << endl << "The base is: " << base << endl;
-		
-		cout << "The exponent is: " << exponent_number << endl;
-		
-		cout << "Please input the new base number" <<endl;
-		
-		cout << endl;
-		
-		goto BEGIN;
-	}
+			cout << "Input base and exponent number!" <<endl;
 	
-	calculation_result = pow(base_number, exponent_number);
-	
-	cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
-}
+			BEGIN:
+			double base_number{input_number()};
+			double exponent_number{input_number()};
 
-double square_root(){
-	
-	cout << "Input base number!" <<endl;
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double calculation_result;
-	
-	try {
-		if (base_number < 0){
-		
-		cout << endl << "Math error: The number is imaginer" <<endl;
-			
-		throw(base_number);
-		
+			try {
+				if (base_number == 0){
+					if(exponent_number < 0){
+					cout << endl << "Math error: Attempted to divide by Zero" <<endl;
+					throw(base_number, exponent_number);
+					}
+				}	
 			}
-		}
-		
-	catch(double base){
-		
-		cout << endl << "The base is: " << base << endl;
-		
-		cout << "Please input a number" <<endl;
-		
-		cout << endl;
-		
-		goto BEGIN;
-	}
+			catch(double base){
+				cout << endl << "The base is: " << base << endl;
+				cout << "The exponent is: " << exponent_number << endl;
+				cout << "Please input the new base number" <<endl;
+				cout << endl;
+				goto BEGIN;
+			}
 	
-	calculation_result = sqrt(base_number);
+			calculation_result = pow(base_number, exponent_number);
+			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
+		};
+		
+		double square_root(){
 	
-	cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
-}
+			cout << "Input base number!" <<endl;
+	
+			BEGIN:
+			double base_number{input_number()};
+	
+			try {
+				if (base_number < 0){
+				cout << endl << "Math error: The number is imaginer" <<endl;
+				throw(base_number);
+				}
+			}
+		
+			catch(double base){
+		
+				cout << endl << "The base is: " << base << endl;
+				cout << "Please input a number" <<endl;		
+				cout << endl;		
+				goto BEGIN;
+			}
+	
+				calculation_result = sqrt(base_number);
+				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
+			};
+			
+			
+		
+};
 
 // Trigonometry operation (in rad)
 double Sinus(){
