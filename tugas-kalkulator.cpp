@@ -78,8 +78,8 @@ class Standard {
 			double second_number{input_number()};	
 			try {
 				if (second_number == 0){
-				//throw runtime_error("Math error: Attempted to divide by Zero\n");
-				cout << endl << "Math error: Divide by Zero!" <<endl;	
+				//throw runtime_ERROR("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
 				throw(second_number);
 				}
 			}
@@ -105,8 +105,8 @@ class Standard {
 			double second_number{input_number()};
 			try {
 				if (second_number == 0){
-				//throw runtime_error("Math error: Attempted to divide by Zero\n");
-				cout << endl << "Math error: Divide by Zero!" <<endl;	
+				//throw runtime_error("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
 				throw(second_number);
 				}
 			}
@@ -147,7 +147,7 @@ class Exponential {
 			try {
 				if (base_number == 0){
 					if(exponent_number < 0){
-					cout << endl << "Math error: Attempted to divide by Zero" <<endl;
+					cout << endl << "Math ERROR: Attempted to divide by Zero" <<endl;
 					throw(base_number, exponent_number);
 					}
 				}	
@@ -173,7 +173,7 @@ class Exponential {
 	
 			try {
 				if (base_number < 0){
-				cout << endl << "Math error: The number is imaginer" <<endl;
+				cout << endl << "Math ERROR: The number is imaginer" <<endl;
 				throw(base_number);
 				}
 			}
@@ -224,10 +224,10 @@ class Trigonometry {
 				double number{input_number()};
 				
 				if (number < -1.0){
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;			
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;			
 					throw(number);
 				}else if(number > 1.0){
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
 					throw(number);
 				}else{	
 					calculation_result = asin(number);
@@ -250,12 +250,12 @@ class Trigonometry {
 			try {
 				double number{input_number()};
 				if (number < -1.0){
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
 					throw(number);
 		
 				}else if(number > 1.0){
 				
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
 					throw(number);
 				}else{
 					
@@ -281,12 +281,12 @@ class Trigonometry {
 			try {
 				double number{input_number()};
 				if (number < -1.0){
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
 					throw(number);
 		
 				}else if(number > 1.0){
 				
-					cout << endl << "Math error: Domain [-1,1] only" <<endl;
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
 					throw(number);
 				}else{
 				
@@ -318,12 +318,12 @@ class Logarithm{
 			try {
 				if (base_number == 0){
 				
-					cout << endl << "Math error: Base number is 0" <<endl;
+					cout << endl << "Math ERROR: Base number is 0" <<endl;
 					throw(base_number);
 				
 				}else if(base_number < 0){
 				
-					cout << endl << "Math error: Base number is negative" <<endl;
+					cout << endl << "Math ERROR: Base number is negative" <<endl;
 					throw(base_number);
 				
 				}
@@ -350,12 +350,12 @@ class Logarithm{
 			try {
 				if (base_number == 0){
 				
-					cout << endl << "Math error: Base number is 0" <<endl;
+					cout << endl << "Math ERROR: Base number is 0" <<endl;
 					throw(base_number);
 					
 				}else if(base_number < 0){
 				
-				cout << endl << "Math error: Base number is negative" <<endl;
+				cout << endl << "Math ERROR: Base number is negative" <<endl;
 				throw(base_number);
 				
 				}
@@ -369,7 +369,7 @@ class Logarithm{
 			
 				goto BEGIN;
 		
-		}
+			}
 	
 			calculation_result = log10(base_number);
 			
@@ -635,6 +635,6 @@ int main(){
 	}
 	cout<<endl;
 	
-	cout << "End of program, press any key to close window..." <<endl;
+	cout << "End of program, press any key to close program..." <<endl;
 	getch();
 }
