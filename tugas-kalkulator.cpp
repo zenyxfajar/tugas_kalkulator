@@ -21,7 +21,7 @@ int back_to_menu(){
 	char input;
 	int option;
 	
-	cout << "Are you sure to use this menu?[Y/N]";
+	cout << "Are you sure to use this menu?[Y/N] ";
 	cin >> input;
 	cout << endl;
 	if (input == 'Y' || input == 'y'){
@@ -29,425 +29,361 @@ int back_to_menu(){
 	} else if(input == 'N' || input == 'n') {
 		option = 0;
 	}
+	
 	return option;
 }
-
-double sum(){
-
-//INPUT NUMBER TO BE CALCULATED
-
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-// DO MATH OPERATION
-	calculation_result = first_number + second_number;
-	
-	cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
-
-}
-
-double subtraction(){
-
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-// DO MATH OPERATION	
-	calculation_result = first_number - second_number;
-	
-	cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
-	
-}
-
-double multiplication(){
-
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-
-// DO MATH OPERATION	
-	calculation_result = first_number * second_number;
-	
-	cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
-	
-}
-
-double division(){
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	DIV:
-		
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-	try {
-		if (second_number == 0){
-//		throw runtime_error("Math error: Attempted to divide by Zero\n");
-		cout << endl << "Math error: Attempted to divide by Zero" <<endl;
-			
-		throw(second_number);
-		
-		}
-	}
-	catch(double denominator){
-		cout << endl << "The denominator is: " << denominator << endl;
-		
-		cout << "Please input the new second number" <<endl;
-		
-		goto DIV;
-	}
-	
-// DO MATH OPERATION
-	calculation_result = first_number / second_number;
-	
-	cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
-
-}
-
-double modulo(){
-	
-//INPUT NUMBER TO BE CALCULATED	
-	cout << "INPUT NUMBER WILL BE ROUNDED!" << endl;
-	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-	int rounded_first, rounded_second;
-	
-	rounded_first = round(first_number);
-	
-	rounded_second = round(second_number);
-	
-// DO MATH OPERATION
-	calculation_result = rounded_first % rounded_second;
-	
-	cout <<"Calculation result: " << rounded_first << " mod " << rounded_second << " = " << calculation_result;
-
-}
-
-//Exponential calculation
-double exp_number(){
-	
-	cout << "Input base and exponent number!" <<endl;
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double exponent_number{input_number()};
-	
-	double calculation_result;
-	
-	
-	try {
-		if (base_number == 0){
-			if(exponent_number < 0){
-			
-			cout << endl << "Math error: Attempted to divide by Zero" <<endl;
-			
-			throw(base_number, exponent_number);
-		
-			}
-		}
-	}
-	catch(double base){
-		
-		cout << endl << "The base is: " << base << endl;
-		
-		cout << "The exponent is: " << exponent_number << endl;
-		
-		cout << "Please input the new base number" <<endl;
-		
-		cout << endl;
-		
-		goto BEGIN;
-	}
-	
-	calculation_result = pow(base_number, exponent_number);
-	
-	cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
-}
-
-double square_root(){
-	
-	cout << "Input base number!" <<endl;
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double calculation_result;
-	
-	try {
-		if (base_number < 0){
-		
-		cout << endl << "Math error: The number is imaginer" <<endl;
-			
-		throw(base_number);
-		
-			}
-		}
-		
-	catch(double base){
-		
-		cout << endl << "The base is: " << base << endl;
-		
-		cout << "Please input a number" <<endl;
-		
-		cout << endl;
-		
-		goto BEGIN;
-	}
-	
-	calculation_result = sqrt(base_number);
-	
-	cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
-}
-
-// Trigonometry operation (in rad)
-double Sinus(){
-	
-	double number{input_number()};
-	
-	double calculation_result;
-  
-	calculation_result = sin(number);
-
-	cout << "Sine " << number << " = " << calculation_result << " rad " << endl;
-}
-
-double Cosinus(){
-	
-	double number{input_number()};
-	
-	double calculation_result;
-  
-	calculation_result = cos(number);
-
-	cout << "Cosine " << number << " = " << calculation_result << " rad " << endl;
-}
-
-double Tangen(){
-	
-	double number{input_number()};
-	
-	double calculation_result;
-  
-	calculation_result = tan(number);
-
-	cout << "Tangen " << number << " = " << calculation_result << " rad " << endl;
-}
-
-double InversSinus(){
-	
-	BEGIN:
-	
-	try {
-		double number{input_number()};
+class Standard {
+	public:
 		double calculation_result;
 		
-			if (number < -1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
+		double addition(){
 			
-				throw(number);
+			//INPUT NUMBER TO BE CALCULATED
+			double first_number{input_number()};
+			double second_number{input_number()};
+			
+			// DO MATH OPERATION
+			calculation_result = first_number + second_number;
+			cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
+		};
 		
+		double subtraction(){
+			
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
+			double second_number{input_number()};
+			
+			// DO MATH OPERATION	
+			calculation_result = first_number - second_number;
+			cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
+		};
+		
+		double multiplication(){
+			
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
+			double second_number{input_number()};
+			
+			// DO MATH OPERATION	
+			calculation_result = first_number * second_number;
+			cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
+		};	
+		
+		double division(){
+			
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
+	
+			DIV:
+			double second_number{input_number()};	
+			try {
+				if (second_number == 0){
+				//throw runtime_ERROR("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
+				throw(second_number);
+				}
 			}
-			else if(number > 1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" <<endl;
+				goto DIV;
+				}
+				// DO MATH OPERATION
+				calculation_result = first_number / second_number;
+				cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
+		};
 			
-				throw(number);
+		double modulo(){
+			
+			//INPUT NUMBER TO BE CALCULATED	
+			cout << "INPUT NUMBER WILL BE ROUNDED!" << endl;
+			cout << "Operation format is : first_number MOD second_number " << endl;
+			
+			double first_number{input_number()};
+			
+			MOD:
+			double second_number{input_number()};
+			try {
+				if (second_number == 0){
+				//throw runtime_error("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
+				throw(second_number);
+				}
 			}
-			else{
-				
-				calculation_result = asin(number);
-				
-				cout << endl << "arcsin " << number << " = " << calculation_result << " rad " << endl;
-			}
-		}
-		catch(double error_number){
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" <<endl;
+				goto MOD;
+				}
 			
-			cout << endl << "The input is: " << error_number << endl;
+			int rounded_first, rounded_second;
+			rounded_first = round(first_number);
+			rounded_second = round(second_number);
 			
-			cout << endl;
-			
-			cout << "Please input a new number" <<endl;
-			
-			goto BEGIN;
-		}
-}
+			// DO MATH OPERATION
+			calculation_result = rounded_first % rounded_second;
+			cout <<"Calculation result: " 
+			<< rounded_first << " mod " 
+			<< rounded_second << " = " 
+			<< calculation_result;
+		};
+		
+};
 
-double InversCosinus(){
-	
-	BEGIN:
-	
-	try {
-		double number{input_number()};
+class Exponential {
+	public:
+		
 		double calculation_result;
 		
-			if (number < -1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
+		//Exponential calculation
+		double exp_number(){
 			
-				throw(number);
-		
-			}
-			else if(number > 1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
-			
-				throw(number);
-			}
-			else{
-				
-				calculation_result = acos(number);
-				
-				cout << endl << "ArcCos " << number << " = " << calculation_result << " rad " << endl;
-			}
-		}
-		catch(double error_number){
-			
-			cout << endl << "The input is: " << error_number << endl;
-			
-			cout << endl;
-			
-			cout << "Please input a new number" <<endl;
-			
-			goto BEGIN;
-		}
-}
-
-double InversTangen(){
-
-	BEGIN:
+			cout << "Input base and exponent number!" <<endl;
 	
-	try {
-		double number{input_number()};
+			BEGIN:
+			double base_number{input_number()};
+			double exponent_number{input_number()};
+
+			try {
+				if (base_number == 0){
+					if(exponent_number < 0){
+					cout << endl << "Math ERROR: Attempted to divide by Zero" <<endl;
+					throw(base_number, exponent_number);
+					}
+				}	
+			}
+			catch(double base){
+				cout << endl << "The base is: " << base << endl;
+				cout << "The exponent is: " << exponent_number << endl;
+				cout << "Please input the new base number" <<endl;
+				cout << endl;
+				goto BEGIN;
+			}
+	
+			calculation_result = pow(base_number, exponent_number);
+			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
+		};
+		
+		double square_root(){
+	
+			cout << "Input base number!" <<endl;
+	
+			BEGIN:
+			double base_number{input_number()};
+	
+			try {
+				if (base_number < 0){
+				cout << endl << "Math ERROR: The number is imaginer" <<endl;
+				throw(base_number);
+				}
+			}
+		
+			catch(double base){
+		
+				cout << endl << "The base is: " << base << endl;
+				cout << "Please input a number" <<endl;		
+				cout << endl;		
+				goto BEGIN;
+			}
+	
+				calculation_result = sqrt(base_number);
+				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
+			};
+};
+
+class Trigonometry {
+	public:
 		double calculation_result;
 		
-			if (number < -1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
+		// Normal trigonometry operation (in rad)
+		double Sinus(){	
 			
-				throw(number);
+			double number{input_number()};
+  			calculation_result = sin(number);
+			cout << "Sine " << number << " = " << calculation_result << " rad " << endl;
+		};
+
+		double Cosinus(){
+			
+			double number{input_number()};
+  			calculation_result = cos(number);
+			cout << "Cosine " << number << " = " << calculation_result << " rad " << endl;
+		};
+
+		double Tangen(){
+			
+			double number{input_number()};
+  			calculation_result = tan(number);
+			cout << "Tangen " << number << " = " << calculation_result << " rad " << endl;
+		};
 		
-			}
-			else if(number > 1.0){
-				
-				cout << endl << "Math error: Domain [-1,1] only" <<endl;
+		double InversSinus(){
 			
-				throw(number);
+			BEGIN:
+			try {
+				double number{input_number()};
+				
+				if (number < -1.0){
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;			
+					throw(number);
+				}else if(number > 1.0){
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
+					throw(number);
+				}else{	
+					calculation_result = asin(number);
+					cout << endl << "arcsin " << number << " = " << calculation_result << " rad " << endl;
+				}
 			}
-			else{
+			catch(double error_number){
+			
+				cout << endl << "The input is: " << error_number << endl;
+				cout << endl;
+				cout << "Please input a new number" <<endl;
+				
+				goto BEGIN;
+			}
+		};
+
+		double InversCosinus(){
+			
+			BEGIN:
+			try {
+				double number{input_number()};
+				if (number < -1.0){
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
+					throw(number);
+		
+				}else if(number > 1.0){
+				
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
+					throw(number);
+				}else{
+					
+					calculation_result = acos(number);
+				
+					cout << endl << "ArcCos " << number << " = " << calculation_result << " rad " << endl;
+				}
+			}
+			catch(double error_number){
+			
+				cout << endl << "The input is: " << error_number << endl;
+				cout << endl;
+				cout << "Please input a new number" <<endl;
+			
+				goto BEGIN;
+			}
+		};
+
+		double InversTangen(){
+		
+			BEGIN:
+		
+			try {
+				double number{input_number()};
+				if (number < -1.0){
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
+					throw(number);
+		
+				}else if(number > 1.0){
+				
+					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
+					throw(number);
+				}else{
 				
 				calculation_result = atan(number);
-				
 				cout << endl << "ArcTan " << number << " = " << calculation_result << " rad " << endl;
+				}
 			}
-		}
-		catch(double error_number){
+			catch(double error_number){
 			
-			cout << endl << "The input is: " << error_number << endl;
+				cout << endl << "The input is: " << error_number << endl;
+				cout << endl;
+				cout << "Please input a new number" <<endl;
 			
-			cout << endl;
-			
-			cout << "Please input a new number" <<endl;
-			
-			goto BEGIN;
-		}
-}
+				goto BEGIN;
+			}
+		};	
+};
 
-double natural_log(){
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double calculation_result;
-	
-	try {
-			if (base_number == 0){
-				
-				cout << endl << "Math error: Base number is 0" <<endl;
+class Logarithm{
+	public:
+		
+		double calculation_result;
+		
+		double natural_log(){
 			
+			BEGIN:
+			double base_number{input_number()};
+	
+			try {
+				if (base_number == 0){
+				
+					cout << endl << "Math ERROR: Base number is 0" <<endl;
+					throw(base_number);
+				
+				}else if(base_number < 0){
+				
+					cout << endl << "Math ERROR: Base number is negative" <<endl;
+					throw(base_number);
+				
+				}
+			}
+			catch(double error_number){
+			
+				cout << endl << "The base number is: " << error_number << endl;
+				cout << endl;
+				cout << "Please input a new number" <<endl;
+			
+				goto BEGIN;
+			}
+	
+			calculation_result = log(base_number);
+	
+			cout <<"Calculation result: " << " ln(" << base_number << ")" << " = " << calculation_result;
+		};
+
+		double base_10_log(){
+			
+			BEGIN:
+			double base_number{input_number()};
+	
+			try {
+				if (base_number == 0){
+				
+					cout << endl << "Math ERROR: Base number is 0" <<endl;
+					throw(base_number);
+					
+				}else if(base_number < 0){
+				
+				cout << endl << "Math ERROR: Base number is negative" <<endl;
 				throw(base_number);
+				
+				}
+			}
+			
+			catch(double error_number){
+			
+				cout << endl << "The base number is: " << error_number << endl;
+				cout << endl;
+				cout << "Please input a new number" <<endl;
+			
+				goto BEGIN;
 		
 			}
-			else if(base_number < 0){
-				
-				cout << endl << "Math error: Base number is negative" <<endl;
-			
-				throw(base_number);
-			}
-		}
-		catch(double error_number){
-			
-			cout << endl << "The base number is: " << error_number << endl;
-			
-			cout << endl;
-			
-			cout << "Please input a new number" <<endl;
-			
-			goto BEGIN;
-		}
 	
-	calculation_result = log(base_number);
-	
-	cout <<"Calculation result: " << " ln(" << base_number << ")" << " = " << calculation_result;
-}
-
-double base_10_log(){
-	
-	BEGIN:
-	double base_number{input_number()};
-	
-	double calculation_result;
-	
-	try {
-			if (base_number == 0){
-				
-				cout << endl << "Math error: Base number is 0" <<endl;
+			calculation_result = log10(base_number);
 			
-				throw(base_number);
+			cout <<"Calculation result: " << " log(" << base_number << ")" << " = " << calculation_result;
 		
-			}
-			else if(base_number < 0){
-				
-				cout << endl << "Math error: Base number is negative" <<endl;
-			
-				throw(base_number);
-			}
-		}
-		catch(double error_number){
-			
-			cout << endl << "The base number is: " << error_number << endl;
-			
-			cout << endl;
-			
-			cout << "Please input a new number" <<endl;
-			
-			goto BEGIN;
-		}
-	
-	calculation_result = log10(base_number);
-	
-	cout <<"Calculation result: " << " log(" << base_number << ")" << " = " << calculation_result;
-}
+		};	
+};
 
 int main(){
+	
+	Standard basicOps;
+	Exponential expOps;
+	Trigonometry trigonOps;
+	Logarithm logOps; //clearly log stands for logarithm not america's heavy metal Lamb of Gods
 	
 	char continue_key;
 	int repick;
@@ -515,7 +451,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				sum();
+				basicOps.addition();
 			}
 
 			break;
@@ -527,7 +463,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				subtraction();
+				basicOps.subtraction();
 			}
 			break;
 
@@ -538,7 +474,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				multiplication();	
+				basicOps.multiplication();	
 			}
 			break;
 
@@ -549,7 +485,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				division();		
+				basicOps.division();		
 			}
 			break;
 
@@ -560,7 +496,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				modulo();	
+				basicOps.modulo();	
 			}
 			break;
 			
@@ -571,7 +507,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				exp_number();	
+				expOps.exp_number();	
 			}
 			break;
 
@@ -582,7 +518,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{	
-				square_root();	
+				expOps.square_root();	
 			}
 			break;
 			
@@ -593,7 +529,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{		
-				Sinus();
+				trigonOps.Sinus();
 			}
 			break;
 
@@ -604,7 +540,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				Cosinus();
+				trigonOps.Cosinus();
 			}
 			break;
 
@@ -615,7 +551,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				Tangen();					
+				trigonOps.Tangen();					
 			}
 			break;
 
@@ -626,7 +562,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{				
-				InversSinus();			
+				trigonOps.InversSinus();			
 			}
 			break;
 
@@ -637,7 +573,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				InversCosinus();
+				trigonOps.InversCosinus();
 			}
 			break;
 
@@ -648,7 +584,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				InversTangen();
+				trigonOps.InversTangen();
 			}
 			break;
 			
@@ -659,7 +595,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				natural_log();
+				logOps.natural_log();
 			}
 			break;
 
@@ -670,7 +606,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				base_10_log();
+				logOps.base_10_log();
 			}
 			break;
 			
@@ -699,6 +635,6 @@ int main(){
 	}
 	cout<<endl;
 	
-	cout << "End of program, press any key to close window..." <<endl;
+	cout << "End of program, press any key to close program..." <<endl;
 	getch();
 }
