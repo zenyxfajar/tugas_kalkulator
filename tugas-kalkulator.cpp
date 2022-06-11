@@ -17,6 +17,21 @@ double input_number(){
 	return number;
 }
 
+int back_to_menu(){
+	char input;
+	int option;
+	
+	cout << "Are you sure to use this menu?[Y/N]";
+	cin >> input;
+	cout << endl;
+	if (input == 'Y' || input == 'y'){
+		option = 1;
+	} else if(input == 'N' || input == 'n') {
+		option = 0;
+	}
+	return option;
+}
+
 double sum(){
 
 //INPUT NUMBER TO BE CALCULATED
@@ -435,6 +450,7 @@ double base_10_log(){
 int main(){
 	
 	char continue_key;
+	int repick;
 	int option;
 	
 	cout << "SELECT THE CALCULATION MENU"<<endl;
@@ -481,89 +497,185 @@ int main(){
 
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
-		case 0	:
-			exit(0);
-			break;
-	    case 1	: 
+		case 0 :
 			
-			sum();
+			repick = back_to_menu();
+			
+			if(repick == 0){
+				goto START;
+			}else{
+				exit(0);
+			}
+						
+			break;
+			
+	    case 1 :
+			repick = back_to_menu();
+			
+			if(repick == 0){
+				goto START;
+			}else{
+				sum();
+			}
 
 			break;
+
 		case 2 : 
 		
-			subtraction();
+			repick = back_to_menu();
 			
+			if(repick == 0){
+				goto START;
+			}else{
+				subtraction();
+			}
 			break;
+
 		case 3 :
 			
-			multiplication();
+			repick = back_to_menu();
 			
+			if(repick == 0){
+				goto START;
+			}else{
+				multiplication();	
+			}
 			break;
-		case 4 : 
+
+		case 4 :
+			
+			repick = back_to_menu();
+			
+			if(repick == 0){
+				goto START;
+			}else{
+				division();		
+			}
+			break;
+
+		case 5 :
 		
-			division();
-
+			repick = back_to_menu();
+	
+			if(repick == 0){
+				goto START;
+			}else{
+				modulo();	
+			}
+			break;
+			
+		case 6 :
+			
+			repick = back_to_menu();
+			
+			if(repick == 0){
+				goto START;
+			}else{
+				exp_number();	
+			}
 			break;
 
-		case 5 : 
-		
-			modulo();
-			break;
+		case 7 :
 			
-		case 6:
+			repick = back_to_menu();
 			
-			exp_number();
-			
-			break;
-
-		case 7:
-			
-			square_root();
-			
+			if(repick == 0){
+				goto START;
+			}else{	
+				square_root();	
+			}
 			break;
 			
 	    case 8 :
+	    	
+	    	repick = back_to_menu();
 
-			Sinus();
+			if(repick == 0){
+				goto START;
+			}else{		
+				Sinus();
+			}
 			break;
 
 		case 9 :
+			
+			repick = back_to_menu();
 
-			Cosinus();
+			if(repick == 0){
+				goto START;
+			}else{
+				Cosinus();
+			}
 			break;
 
 		case 10 :
+			
+			repick = back_to_menu();
 
-			Tangen();
+			if(repick == 0){
+				goto START;
+			}else{
+				Tangen();					
+			}
 			break;
 
 		case 11 :
+			
+			repick = back_to_menu();
 
-			InversSinus();
+			if(repick == 0){
+				goto START;
+			}else{				
+				InversSinus();			
+			}
 			break;
 
 		case 12 :
+			
+			repick = back_to_menu();
 
-			InversCosinus();
+			if(repick == 0){
+				goto START;
+			}else{
+				InversCosinus();
+			}
 			break;
 
 		case 13 :
+			
+			repick = back_to_menu();
 
-			InversTangen();
+			if(repick == 0){
+				goto START;
+			}else{
+				InversTangen();
+			}
 			break;
 			
 		case 14 :
-
-			natural_log();
 			
+			repick = back_to_menu();
+
+			if(repick == 0){
+				goto START;
+			}else{
+				natural_log();
+			}
 			break;
+
 		case 15 :
+			
+			repick = back_to_menu();
 
-			base_10_log();
-
+			if(repick == 0){
+				goto START;
+			}else{
+				base_10_log();
+			}
 			break;
 			
 		default:
+			
 			cout << endl;
 			cout<<"Selector only accept number within range 1 to 15"<<endl;
 			
