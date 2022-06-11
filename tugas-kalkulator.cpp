@@ -24,6 +24,7 @@ int back_to_menu(){
 	cout << "Are you sure to use this menu?[Y/N] ";
 	cin >> input;
 	cout << endl;
+	
 	if (input == 'Y' || input == 'y'){
 		option = 1;
 	} else if(input == 'N' || input == 'n') {
@@ -32,6 +33,25 @@ int back_to_menu(){
 	
 	return option;
 }
+
+int reuse_or_not(){
+	char input;
+	int choice;
+	
+	cout << endl;
+	cout << "Do you want to continue to use the calculator?[Y/N] ";
+	cin >> input;
+	cout << endl;
+	
+	if (input == 'Y' || input == 'y'){
+		system ("CLS");
+		choice = 1;
+	} else if(input == 'N' || input == 'n') {
+		choice = 0;
+	}
+	
+	return choice;
+} 
 class Standard {
 	public:
 		double calculation_result;
@@ -386,8 +406,9 @@ int main(){
 	Logarithm logOps; //clearly log stands for logarithm not america's heavy metal Lamb of Gods
 	
 	char continue_key;
-	int repick;
-	int option;
+	int repick, option, done;
+	
+	MENU:
 	
 	cout << "SELECT THE CALCULATION MENU"<<endl;
 	cout << "========================================================================"<<endl;
@@ -434,24 +455,32 @@ int main(){
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
 		case 0 :
+			cout << endl << "Do you want to exit?[Y/N] ";
+			cin >> continue_key;
 			
-			repick = back_to_menu();
-			
-			if(repick == 0){
-				goto START;
-			}else{
+			if(continue_key == 'Y' || continue_key == 'y'){
 				exit(0);
+			}else if(continue_key == 'N' || continue_key == 'n'){
+				system("cls");
+				goto MENU;
 			}
-						
+				
 			break;
 			
 	    case 1 :
+	    	
 			repick = back_to_menu();
 			
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				basicOps.addition();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
 			}
 
 			break;
@@ -463,7 +492,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				basicOps.subtraction();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
 			}
 			break;
 
@@ -474,7 +509,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				basicOps.multiplication();	
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
 			}
 			break;
 
@@ -485,7 +526,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				basicOps.division();		
+				
+				basicOps.division();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}		
 			}
 			break;
 
@@ -496,7 +543,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				basicOps.modulo();	
+				
+				basicOps.modulo();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}	
 			}
 			break;
 			
@@ -507,7 +560,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				expOps.exp_number();	
+				
+				expOps.exp_number();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}	
 			}
 			break;
 
@@ -518,7 +577,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{	
+			
 				expOps.square_root();	
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
 			}
 			break;
 			
@@ -529,7 +594,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{		
+			
 				trigonOps.Sinus();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 
@@ -540,7 +612,13 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				trigonOps.Cosinus();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
 			}
 			break;
 
@@ -551,7 +629,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				trigonOps.Tangen();					
+				
+				trigonOps.Tangen();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}	
+								
 			}
 			break;
 
@@ -561,8 +646,15 @@ int main(){
 
 			if(repick == 0){
 				goto START;
-			}else{				
-				trigonOps.InversSinus();			
+			}else{		
+					
+				trigonOps.InversSinus();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 
@@ -573,7 +665,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				trigonOps.InversCosinus();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 
@@ -584,7 +683,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				trigonOps.InversTangen();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 			
@@ -595,7 +701,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				logOps.natural_log();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 
@@ -606,7 +719,14 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
+				
 				logOps.base_10_log();
+				done = reuse_or_not();
+				
+				if(done == 1){
+					goto MENU;
+				}
+				
 			}
 			break;
 			
@@ -620,8 +740,6 @@ int main(){
 			cin >> continue_key;
 			
 			if(continue_key == 'Y' || continue_key == 'y'){
-				
-//				system ("CLS");
 				
 				goto START;
 			}
