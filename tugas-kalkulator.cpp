@@ -21,7 +21,7 @@ int back_to_menu(){
 	char input;
 	int option;
 	
-	cout << "Are you sure to use this menu?[Y/N]";
+	cout << "Are you sure to use this menu?[Y/N] ";
 	cin >> input;
 	cout << endl;
 	if (input == 'Y' || input == 'y'){
@@ -71,7 +71,7 @@ class Standard{
 			try {
 				if (second_number == 0){
 				//throw runtime_error("Math error: Attempted to divide by Zero\n");
-				cout << endl << "Math error: Attempted to divide by Zero" <<endl;	
+				cout << endl << "Math error: Divide by Zero!" <<endl;	
 				throw(second_number);
 				}
 			}
@@ -88,13 +88,28 @@ class Standard{
 		double modulo(){
 			//INPUT NUMBER TO BE CALCULATED	
 			cout << "INPUT NUMBER WILL BE ROUNDED!" << endl;
+			cout << "Operation format is : first_number MOD second_number " << endl;
 			double first_number{input_number()};
+			
+			MOD:
 			double second_number{input_number()};
+			try {
+				if (second_number == 0){
+				//throw runtime_error("Math error: Attempted to divide by Zero\n");
+				cout << endl << "Math error: Divide by Zero!" <<endl;	
+				throw(second_number);
+				}
+			}
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" <<endl;
+				goto MOD;
+				}
 			
 			int rounded_first, rounded_second;
 			rounded_first = round(first_number);
 			rounded_second = round(second_number);
-		
+			
 			// DO MATH OPERATION
 			calculation_result = rounded_first % rounded_second;
 			cout <<"Calculation result: " 
