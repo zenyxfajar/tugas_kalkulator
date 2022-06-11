@@ -454,8 +454,9 @@ int main(){
 		<< setw(37) << "14. Natural Logarithm (ln)" << endl;
 	cout << setw(10) << "5. Modulus"
 		<< setw(17) << "10. Tan" 
-		<< setw(32) << "15. Base 10 Logarithm" << endl;
+		<< setw(32) << "15. Base 10 Logarithm"<< endl;
 	cout << endl;
+	cout << "To close the program, input 0" << endl; 
 	cout << "========================================================================"<<endl;
 
 	cout << endl;
@@ -480,7 +481,10 @@ int main(){
 
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
-	        case 1 : 
+		case 0	:
+			exit(0);
+			break;
+	    case 1	: 
 			
 			sum();
 
