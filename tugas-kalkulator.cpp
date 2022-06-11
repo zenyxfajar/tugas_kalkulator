@@ -29,116 +29,81 @@ int back_to_menu(){
 	} else if(input == 'N' || input == 'n') {
 		option = 0;
 	}
+	
 	return option;
 }
-
-double sum(){
-
-//INPUT NUMBER TO BE CALCULATED
-
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-// DO MATH OPERATION
-	calculation_result = first_number + second_number;
-	
-	cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
-
-}
-
-double subtraction(){
-
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-// DO MATH OPERATION	
-	calculation_result = first_number - second_number;
-	
-	cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
-	
-}
-
-double multiplication(){
-
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-
-// DO MATH OPERATION	
-	calculation_result = first_number * second_number;
-	
-	cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
-	
-}
-
-double division(){
-//INPUT NUMBER TO BE CALCULATED	
-	double first_number{input_number()};
-	
-	DIV:
+class Standard{
+	public:
+		double calculation_result;
+		double addition(){
+			//INPUT NUMBER TO BE CALCULATED
+			double first_number{input_number()};
+			double second_number{input_number()};
+			// DO MATH OPERATION
+			calculation_result = first_number + second_number;
+			cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
+		};
 		
-	double second_number{input_number()};
+		double subtraction(){
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
+			double second_number{input_number()};
+			// DO MATH OPERATION	
+			calculation_result = first_number - second_number;
+			cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
+		};
+		
+		double multiplication(){
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
+			double second_number{input_number()};
+			// DO MATH OPERATION	
+			calculation_result = first_number * second_number;
+			cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
+		};	
+		
+		double division(){
+			//INPUT NUMBER TO BE CALCULATED	
+			double first_number{input_number()};
 	
-	double calculation_result;
-	
-	try {
-		if (second_number == 0){
-//		throw runtime_error("Math error: Attempted to divide by Zero\n");
-		cout << endl << "Math error: Attempted to divide by Zero" <<endl;
+			DIV:
+			double second_number{input_number()};	
+			try {
+				if (second_number == 0){
+				//throw runtime_error("Math error: Attempted to divide by Zero\n");
+				cout << endl << "Math error: Attempted to divide by Zero" <<endl;	
+				throw(second_number);
+				}
+			}
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" <<endl;
+				goto DIV;
+				}
+				// DO MATH OPERATION
+				calculation_result = first_number / second_number;
+				cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
+		};
 			
-		throw(second_number);
+		double modulo(){
+			//INPUT NUMBER TO BE CALCULATED	
+			cout << "INPUT NUMBER WILL BE ROUNDED!" << endl;
+			double first_number{input_number()};
+			double second_number{input_number()};
+			
+			int rounded_first, rounded_second;
+			rounded_first = round(first_number);
+			rounded_second = round(second_number);
 		
-		}
-	}
-	catch(double denominator){
-		cout << endl << "The denominator is: " << denominator << endl;
+			// DO MATH OPERATION
+			calculation_result = rounded_first % rounded_second;
+			cout <<"Calculation result: " 
+			<< rounded_first << " mod " 
+			<< rounded_second << " = " 
+			<< calculation_result;
+		};
 		
-		cout << "Please input the new second number" <<endl;
-		
-		goto DIV;
-	}
-	
-// DO MATH OPERATION
-	calculation_result = first_number / second_number;
-	
-	cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
-
-}
-
-double modulo(){
-	
-//INPUT NUMBER TO BE CALCULATED	
-	cout << "INPUT NUMBER WILL BE ROUNDED!" << endl;
-	
-	double first_number{input_number()};
-	
-	double second_number{input_number()};
-	
-	double calculation_result;
-	
-	int rounded_first, rounded_second;
-	
-	rounded_first = round(first_number);
-	
-	rounded_second = round(second_number);
-	
-// DO MATH OPERATION
-	calculation_result = rounded_first % rounded_second;
-	
-	cout <<"Calculation result: " << rounded_first << " mod " << rounded_second << " = " << calculation_result;
-
-}
+};
 
 //Exponential calculation
 double exp_number(){
@@ -449,6 +414,8 @@ double base_10_log(){
 
 int main(){
 	
+	Standard basicOps;
+	
 	char continue_key;
 	int repick;
 	int option;
@@ -515,7 +482,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				sum();
+				basicOps.addition();
 			}
 
 			break;
@@ -527,7 +494,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				subtraction();
+				basicOps.subtraction();
 			}
 			break;
 
@@ -538,7 +505,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				multiplication();	
+				basicOps.multiplication();	
 			}
 			break;
 
@@ -549,7 +516,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				division();		
+				basicOps.division();		
 			}
 			break;
 
@@ -560,7 +527,7 @@ int main(){
 			if(repick == 0){
 				goto START;
 			}else{
-				modulo();	
+				basicOps.modulo();	
 			}
 			break;
 			
