@@ -17,6 +17,10 @@ double input_number(){
 	return number;
 }
 
+//void back_to_menu(){
+//	main();
+//}
+
 double sum(){
 
 //INPUT NUMBER TO BE CALCULATED
@@ -481,12 +485,16 @@ int main(){
 
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
-		case 0	:
+		case 0 :
+			
 			exit(0);
+			
 			break;
-	    case 1	: 
+			
+	    case 1 : 
 			
 			sum();
+			back_to_menu();
 
 			break;
 		case 2 : 
@@ -510,13 +518,13 @@ int main(){
 			modulo();
 			break;
 			
-		case 6:
+		case 6 :
 			
 			exp_number();
 			
 			break;
 
-		case 7:
+		case 7 :
 			
 			square_root();
 			
