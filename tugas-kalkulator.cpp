@@ -296,32 +296,27 @@ class Trigonometry {
 
 		double InversTangen(){
 		
+				double y_number{input_number()};
 			BEGIN:
-		
+				double x_number{input_number()};
 			try {
-				double number{input_number()};
-				if (number < -1.0){
-					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
-					throw(number);
-		
-				}else if(number > 1.0){
 				
-					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
-					throw(number);
-				}else{
-				
-				calculation_result = atan(number);
-				cout << endl << "ArcTan " << number << " = " << calculation_result << " rad " << endl;
+				if (x_number == 0){
+				//throw runtime_ERROR("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
+				throw(x_number);
 				}
+				
 			}
-			catch(double error_number){
-			
-				cout << endl << "The input is: " << error_number << endl;
-				cout << endl;
-				cout << "Please input a new number" <<endl;
-			
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" <<endl;
 				goto BEGIN;
 			}
+			calculation_result = atan2(y_number, x_number);
+			
+			cout << endl << "ArcTan of y = " << y_number << "and x = "<< x_number << " = " << calculation_result << " rad " << endl;
+						
 		};	
 };
 
@@ -454,15 +449,20 @@ int main(){
 
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
+		
 		case 0 :
 			cout << endl << "Do you want to exit?[Y/N] ";
 			cin >> continue_key;
 			
 			if(continue_key == 'Y' || continue_key == 'y'){
+				
 				exit(0);
+				
 			}else if(continue_key == 'N' || continue_key == 'n'){
+				
 				system("cls");
 				goto MENU;
+				
 			}
 				
 			break;
