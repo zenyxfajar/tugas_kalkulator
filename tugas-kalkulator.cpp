@@ -295,27 +295,34 @@ class Trigonometry {
 		};
 
 		double InversTangen(){
-		
-				double y_number{input_number()};
+			
+			cout << "Input for Y " <<endl;
+			double y_number{input_number()};
+			
 			BEGIN:
-				double x_number{input_number()};
+				
+			cout << "Input for X " <<endl;
+			double x_number{input_number()};
 			try {
 				
 				if (x_number == 0){
+					
 				//throw runtime_ERROR("Math ERROR: Attempted to divide by Zero\n");
 				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
+				
 				throw(x_number);
 				}
 				
 			}
 			catch(double denominator){
 				cout << endl << "The denominator is: " << denominator << endl;
-				cout << "Please input the new second number" <<endl;
+				cout << "Please input the new second number" << endl;
 				goto BEGIN;
 			}
+			
 			calculation_result = atan2(y_number, x_number);
 			
-			cout << endl << "ArcTan of y = " << y_number << "and x = "<< x_number << " = " << calculation_result << " rad " << endl;
+			cout << endl << "ArcTan of y = " << y_number << " and x = "<< x_number << " = " << calculation_result << " rad " << endl;
 						
 		};	
 };
