@@ -21,6 +21,7 @@ int back_to_menu(){
 	char input;
 	int option;
 	
+	BACK:
 	cout << "Are you sure to use this menu?[Y/N] ";
 	cin >> input;
 	cout << endl;
@@ -29,6 +30,8 @@ int back_to_menu(){
 		option = 1;
 	} else if(input == 'N' || input == 'n') {
 		option = 0;
+	} else {
+		goto BACK;
 	}
 	
 	return option;
@@ -37,6 +40,8 @@ int back_to_menu(){
 int reuse_or_not(){
 	char input;
 	int choice;
+	
+	ASK:
 	
 	cout << endl;
 	cout << "Do you want to continue to use the calculator?[Y/N] ";
@@ -48,14 +53,18 @@ int reuse_or_not(){
 		choice = 1;
 	} else if(input == 'N' || input == 'n') {
 		choice = 0;
+	} else {
+		cout << endl << "Only accept Y/N "<< endl;
+		goto ASK;
 	}
 	
 	return choice;
 } 
 class Standard {
 	public:
-		double calculation_result;
 		
+		double calculation_result;
+						
 		double addition(){
 			
 			//INPUT NUMBER TO BE CALCULATED
@@ -64,7 +73,8 @@ class Standard {
 			
 			// DO MATH OPERATION
 			calculation_result = first_number + second_number;
-			cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " + " << second_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double subtraction(){
@@ -75,7 +85,8 @@ class Standard {
 			
 			// DO MATH OPERATION	
 			calculation_result = first_number - second_number;
-			cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " - " << second_number << " = "
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double multiplication(){
@@ -86,7 +97,8 @@ class Standard {
 			
 			// DO MATH OPERATION	
 			calculation_result = first_number * second_number;
-			cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " x " << second_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};	
 		
 		double division(){
@@ -110,7 +122,8 @@ class Standard {
 				}
 				// DO MATH OPERATION
 				calculation_result = first_number / second_number;
-				cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
+				cout <<"Calculation result: " << first_number << " : " << second_number << " = " 
+					<< setprecision(4) << calculation_result;
 		};
 			
 		double modulo(){
@@ -181,7 +194,8 @@ class Exponential {
 			}
 	
 			calculation_result = pow(base_number, exponent_number);
-			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
+			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double square_root(){
@@ -207,7 +221,8 @@ class Exponential {
 			}
 	
 				calculation_result = sqrt(base_number);
-				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
+				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " 
+					<< setprecision(4) << calculation_result;
 			};
 };
 
