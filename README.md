@@ -2,7 +2,7 @@
 
 ### Table of content
   1. [Author](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#created-by)
-  2. [How the program work?](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#how-the-program-work))
+  2. [How the program work?](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#how-the-program-work)
   3. [Flowchart](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#flowchart)
   4. [Division by zero](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#division-by-zero)
   5. [Out of range](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#out-of-range)
