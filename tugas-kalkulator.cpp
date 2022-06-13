@@ -21,6 +21,7 @@ int back_to_menu(){
 	char input;
 	int option;
 	
+	BACK:
 	cout << "Are you sure to use this menu?[Y/N] ";
 	cin >> input;
 	cout << endl;
@@ -29,6 +30,8 @@ int back_to_menu(){
 		option = 1;
 	} else if(input == 'N' || input == 'n') {
 		option = 0;
+	} else {
+		goto BACK;
 	}
 	
 	return option;
@@ -37,6 +40,8 @@ int back_to_menu(){
 int reuse_or_not(){
 	char input;
 	int choice;
+	
+	ASK:
 	
 	cout << endl;
 	cout << "Do you want to continue to use the calculator?[Y/N] ";
@@ -48,14 +53,18 @@ int reuse_or_not(){
 		choice = 1;
 	} else if(input == 'N' || input == 'n') {
 		choice = 0;
+	} else {
+		cout << endl << "Only accept Y/N "<< endl;
+		goto ASK;
 	}
 	
 	return choice;
 } 
 class Standard {
 	public:
-		double calculation_result;
 		
+		double calculation_result;
+						
 		double addition(){
 			
 			//INPUT NUMBER TO BE CALCULATED
@@ -64,7 +73,8 @@ class Standard {
 			
 			// DO MATH OPERATION
 			calculation_result = first_number + second_number;
-			cout <<"Calculation result: " << first_number << " + " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " + " << second_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double subtraction(){
@@ -75,7 +85,8 @@ class Standard {
 			
 			// DO MATH OPERATION	
 			calculation_result = first_number - second_number;
-			cout <<"Calculation result: " << first_number << " - " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " - " << second_number << " = "
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double multiplication(){
@@ -86,7 +97,8 @@ class Standard {
 			
 			// DO MATH OPERATION	
 			calculation_result = first_number * second_number;
-			cout <<"Calculation result: " << first_number << " x " << second_number << " = " << calculation_result;
+			cout <<"Calculation result: " << first_number << " x " << second_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};	
 		
 		double division(){
@@ -110,7 +122,8 @@ class Standard {
 				}
 				// DO MATH OPERATION
 				calculation_result = first_number / second_number;
-				cout <<"Calculation result: " << first_number << " : " << second_number << " = " << calculation_result;
+				cout <<"Calculation result: " << first_number << " : " << second_number << " = " 
+					<< setprecision(4) << calculation_result;
 		};
 			
 		double modulo(){
@@ -181,7 +194,8 @@ class Exponential {
 			}
 	
 			calculation_result = pow(base_number, exponent_number);
-			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " << calculation_result;
+			cout <<"Calculation result: " << base_number << " ^ " << exponent_number << " = " 
+				<< setprecision(4) << calculation_result;
 		};
 		
 		double square_root(){
@@ -207,7 +221,8 @@ class Exponential {
 			}
 	
 				calculation_result = sqrt(base_number);
-				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " << calculation_result;
+				cout <<"Calculation result: " << base_number << " ^0.5 " << " = " 
+					<< setprecision(4) << calculation_result;
 			};
 };
 
@@ -220,21 +235,21 @@ class Trigonometry {
 			
 			double number{input_number()};
   			calculation_result = sin(number);
-			cout << "Sine " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Sine " << number << " = " << calculation_result << endl;
 		};
 
 		double Cosinus(){
 			
 			double number{input_number()};
   			calculation_result = cos(number);
-			cout << "Cosine " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Cosine " << number << " = " << calculation_result << endl;
 		};
 
 		double Tangen(){
 			
 			double number{input_number()};
   			calculation_result = tan(number);
-			cout << "Tangen " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Tangen " << number << " = " << calculation_result << endl;
 		};
 		
 		double InversSinus(){
@@ -295,33 +310,35 @@ class Trigonometry {
 		};
 
 		double InversTangen(){
-		
+			
+			cout << "Input for Y " <<endl;
+			double y_number{input_number()};
+			
 			BEGIN:
-		
+				
+			cout << "Input for X " <<endl;
+			double x_number{input_number()};
 			try {
-				double number{input_number()};
-				if (number < -1.0){
-					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
-					throw(number);
-		
-				}else if(number > 1.0){
 				
-					cout << endl << "Math ERROR: Domain [-1,1] only" <<endl;
-					throw(number);
-				}else{
+				if (x_number == 0){
+					
+				//throw runtime_ERROR("Math ERROR: Attempted to divide by Zero\n");
+				cout << endl << "Math ERROR: Divide by Zero!" <<endl;	
 				
-				calculation_result = atan(number);
-				cout << endl << "ArcTan " << number << " = " << calculation_result << " rad " << endl;
+				throw(x_number);
 				}
+				
 			}
-			catch(double error_number){
-			
-				cout << endl << "The input is: " << error_number << endl;
-				cout << endl;
-				cout << "Please input a new number" <<endl;
-			
+			catch(double denominator){
+				cout << endl << "The denominator is: " << denominator << endl;
+				cout << "Please input the new second number" << endl;
 				goto BEGIN;
 			}
+			
+			calculation_result = atan2(y_number, x_number);
+			
+			cout << endl << "ArcTan of y = " << y_number << " and x = "<< x_number << " = " << calculation_result << " rad " << endl;
+						
 		};	
 };
 
@@ -454,15 +471,20 @@ int main(){
 
 //SELECT THE FROM CALCULATION MENU
 	switch(option){
+		
 		case 0 :
 			cout << endl << "Do you want to exit?[Y/N] ";
 			cin >> continue_key;
 			
 			if(continue_key == 'Y' || continue_key == 'y'){
+				
 				exit(0);
+				
 			}else if(continue_key == 'N' || continue_key == 'n'){
+				
 				system("cls");
 				goto MENU;
+				
 			}
 				
 			break;
