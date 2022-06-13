@@ -47,3 +47,12 @@
   - The flow of the program can be seen in below flowchart
   
   ![Untitled Diagram (6)](https://user-images.githubusercontent.com/101339523/173421208-164851dc-8189-478f-8d06-5cb4985583bd.jpg)
+  
+ ### Division by zero
+  - Division by zero will throw an `Math ERROR` message.
+  - The user then will be asked to input the new denominator
+  
+  ![division by zero](https://user-images.githubusercontent.com/101339523/173422578-7817be49-b365-4102-9540-14e39999f11a.jpg)
+  
+ 
+
