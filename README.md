@@ -1,5 +1,12 @@
 # PROGRAM KALKULATOR SCIENTIFIC
 
+### Table of content
+  1. [Author](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#created-by)
+  2. [How the program work?](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#how-the-program-work))
+  3. [Flowchart](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#flowchart)
+  4. [Division by zero](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#division-by-zero)
+  5. [Out of range](https://github.com/HafiedHA/tugas_kalkulator/edit/main/README.md#out-of-range)
+
 ### Created by
   1. Zenix Fajar Luthfiansyah 17/413531/TK/45971
      -  Create public object and method
@@ -49,10 +56,16 @@
   ![Untitled Diagram (6)](https://user-images.githubusercontent.com/101339523/173421208-164851dc-8189-478f-8d06-5cb4985583bd.jpg)
   
  ### Division by zero
-  - Division by zero will throw an `Math ERROR` message.
+  - Division by zero will throw an `Math ERROR:` message.
   - The user then will be asked to input the new denominator
   
   ![division by zero](https://user-images.githubusercontent.com/101339523/173422578-7817be49-b365-4102-9540-14e39999f11a.jpg)
   
- 
+ ### Out of range
+  - The inverse of sine and cosine input are defined in radian which have range between `-1 to 1` as stated in the `C++` documentation.
+  - If input is `input > 1 ` or `input < -1` program will throw `MATH ERROR:` message.
+  - The user will need to input a new number
+  
+  ![out of range](https://user-images.githubusercontent.com/101339523/173423447-a1910dc9-0493-4fd4-bce8-16622b14a8c7.jpg)
+
 
