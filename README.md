@@ -8,7 +8,7 @@
   5. [Out of range](https://github.com/HafiedHA/tugas_kalkulator/#out-of-range)
 
 ### Created by
-  1. Zenix Fajar Luthfiansyah 17/413531/TK/45971
+  1. Zenix Fajar Luthfiansyah 17/413531/TK/45971 - [GitHub](https://github.com/zenyxfajar)
      -  Create public object and method
      -  Error handling
      -  Checking code
