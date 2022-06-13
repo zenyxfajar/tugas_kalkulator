@@ -235,21 +235,21 @@ class Trigonometry {
 			
 			double number{input_number()};
   			calculation_result = sin(number);
-			cout << "Sine " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Sine " << number << " = " << calculation_result << endl;
 		};
 
 		double Cosinus(){
 			
 			double number{input_number()};
   			calculation_result = cos(number);
-			cout << "Cosine " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Cosine " << number << " = " << calculation_result << endl;
 		};
 
 		double Tangen(){
 			
 			double number{input_number()};
   			calculation_result = tan(number);
-			cout << "Tangen " << number << " = " << calculation_result << " rad " << endl;
+			cout << "Tangen " << number << " = " << calculation_result << endl;
 		};
 		
 		double InversSinus(){
