@@ -1,16 +1,49 @@
 # PROGRAM KALKULATOR SCIENTIFIC
 
-Scientific Calculator Program made for Pemrograman Dasar Lecture Assignement
+### Created by
+  1. Zenix Fajar Luthfiansyah 17/413531/TK/45971
+     -  Create public object and method
+     -  Error handling
+     -  Checking code
+  2. Contributor 2
+     -  Do what
+     -  Do what
+  3. Contributor 3
+     -  Do what
 
-Program written in C++ containing 15 menu of calculation including basic operation, trigonometry and logarithm.
+### About project
 
-This program served as a MVP, later development will add more feature.
+  - This Scientific Calculator Program Project created for Pemrograman Dasar Lecture Assignement. 
+  - Program written in `C++` containing 15 menu of calculation including basic operation, exponential, trigonometry and logarithm.
+  - For standar operation and trigonometri, output formatted to display a decimal with four significant digit.
 
-Compiled program as seen in picture below
+### How the program work?
 
-![snapshot_program_cli](https://user-images.githubusercontent.com/101339523/170889221-cc8a14ac-d878-4c17-9d46-be5bf3d77b4f.jpg)
+  - Program mostly in CLI
+  - To start using the program, user will have run the program first
+  - Then it will show the main menu of the program, containing 15 choice of calculation menu
+  
+  ![Halaman awal](https://user-images.githubusercontent.com/101339523/173419165-b048f2b4-b5ca-4aba-af6d-47b61f07e2fb.jpg) 
+  
+  - Valid input is an integer number between `1` to `15`, if user give `0` to the `input`, it will `exit` the program
+  - Once user select a menu, the program will ask whether the user pick the correct menu
+  
+  ![opsi dipilih](https://user-images.githubusercontent.com/101339523/173419879-7094b94b-0d50-4eac-aa9b-2244d4515515.jpg)
+  
+  - If user say `Yes` or `Y` the program then will continue and user can start input number to be calculated
+  - After calculation is done, it will ask the user if they want to continue or not, by giving input `Y` program will continue and ended if input is `N`
+  
+  ![calcuklation done](https://user-images.githubusercontent.com/101339523/173420301-6e34f0ba-8908-461f-9cad-1ecf992cd051.jpg)
+  
+  - If input is `Y` it will erase last calculation result and display the main menu
+ 
+  ![continued](https://user-images.githubusercontent.com/101339523/173420661-26e2b60d-591b-425a-aff6-f416115602eb.jpg)
+  
+  - If input is `N` it will exit the program
+  
+  ![program end](https://user-images.githubusercontent.com/101339523/173421015-9d4d42f9-3040-47fc-97f6-760a1be4c418.jpg)
 
-To use this program
-1. Choose the opration, put number 1 - 15
-2. Input the number that you want to calculate
-3. The result of the operation will be apear
+### Flowchart
+  - The flow of the program can be seen in below flowchart
+  
+  ![Untitled Diagram (6)](https://user-images.githubusercontent.com/101339523/173421208-164851dc-8189-478f-8d06-5cb4985583bd.jpg)
